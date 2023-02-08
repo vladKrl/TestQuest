@@ -53,7 +53,7 @@ class User{
 
     // Проверка пароля на валидность
     function validPassword(){
-        if (!preg_match('/^[0-9a-zA-Z]{6,}$/', $this->password) )
+        if (!preg_match('/^(?=.*[0-9])(?=.*[a-zA-Z])[0-9a-zA-Z]{6,}$/', $this->password) )
             $this->errorArray['notValidPassword'] = 'Invalid password!';
     }
 
